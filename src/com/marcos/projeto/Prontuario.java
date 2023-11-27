@@ -1,3 +1,4 @@
+package com.marcos.projeto;
 
 public class Prontuario extends Consulta{
 	private String paciente;
@@ -38,15 +39,4 @@ public class Prontuario extends Consulta{
 		this.tipo_tratamento = tipo_tratamento;
 	}
 
-	public Prontuario(int idCliente, String cpf, String nome, String telefone, int idFisioterapeuta, String nome2,
-			String especialidade, int id_consulta, int id_paciente, int id_fisioterapeuta, int id_agendamento,
-			String data_consulta, String paciente, String data_consulta2, String hora_consulta,
-			String tipo_tratamento) {
-		super(idCliente, cpf, nome, telefone, idFisioterapeuta, nome2, especialidade, id_consulta, id_paciente,
-				id_fisioterapeuta, id_agendamento, data_consulta);
-		this.paciente = paciente;
-		this.data_consulta2 = data_consulta2;
-		this.hora_consulta = hora_consulta;
-		this.tipo_tratamento = tipo_tratamento;
-	}
 }
