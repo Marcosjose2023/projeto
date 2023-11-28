@@ -5,13 +5,25 @@ import java.util.Scanner;
 public class Menu {
 
     private Cliente[] armazenamentoCliente;
+    private Fisioterapeuta[] armazenamentoFisioterapeuta;
     private int clienteAtual = 0;
+    private int fisioterapeutaAtual = 0;
     private Scanner scanner;
 
     public Menu(){
         armazenamentoCliente = new Cliente[10];
+        armazenamentoFisioterapeuta = new Fisioterapeuta[10];
         scanner = new Scanner(System.in);
     }
+
+    //adicionar opcao no switc case
+    // criar arrays do fisioterapeuta
+    // criar o contador do fisiotepeuta
+    // iniciar o arrys do fisioterapeuta
+    // criar o metodo de registrar o fisioterapeuta
+    // criar o metodo de buscar o fisioterapeuta
+
+
 
     public void abrirMenu() {
         int instrucao = 0;
@@ -37,6 +49,12 @@ public class Menu {
                 case 2:
                     buscaClientePorNome();
                     break;
+                case 4:
+                    cadastrarFisioterapeuta();
+                    break;
+                case 5:
+                    buscarFisioterapeutaPeloNome();
+                    break;
                 case 6:
                     System.out.println("SAINDO.");
                     break;
@@ -48,6 +66,25 @@ public class Menu {
         System.out.println("Fim da execução");
     }
 
+    private void cadastrarFisioterapeuta() {
+        Fisioterapeuta fisioterapeuta = new Fisioterapeuta();
+
+        System.out.println("Nome:");
+        fisioterapeuta.setNome(scanner.nextLine());
+
+        System.out.println("Cpf:");
+        fisioterapeuta.setCpf(scanner.nextLine());
+
+        System.out.println("Telefone");
+        fisioterapeuta.setTelefone(scanner.nextLine());
+
+        System.out.println("Especialidade");
+        fisioterapeuta.setEspecialidade(scanner.nextLine());
+
+        System.out.println("Cliente salvo, id: " + clienteAtual);
+        armazenamentoFisioterapeuta[fisioterapeutaAtual] = fisioterapeuta;
+        fisioterapeutaAtual++;
+    }
     private void buscaClientePorNome() {
         System.out.println("Digite o nome a ser buscado:");
         String busca = scanner.nextLine();
@@ -59,10 +96,27 @@ public class Menu {
                 System.out.println("Nome: " + armazenamentoCliente[i].getNome());
                 System.out.println("Telefone: " + armazenamentoCliente[i].getTelefone());
                 System.out.println("Cpf: " + armazenamentoCliente[i].getCpf());
-                System.out.println("Resmo: " + armazenamentoCliente[i].getResumo());
+                System.out.println("Resumo: " + armazenamentoCliente[i].getResumo());
                 break;
             }
         }
+    }
+    private void buscarFisioterapeutaPeloNome(){
+        System.out.println("Digite o nome do fisioterapeuta:");
+        String busca = scanner.nextLine();
+
+        for(int i =0;i < armazenamentoFisioterapeuta.length;i++){
+            if (armazenamentoFisioterapeuta[i].getNome().equals(busca)){
+                System.out.println("Fisioterqapeuta encontrado:");
+                System.out.println("Id: " + armazenamentoFisioterapeuta[i].getIdPessoa());
+                System.out.println("Nome: " + armazenamentoFisioterapeuta[i].getNome());
+                System.out.println("Telefone: " + armazenamentoFisioterapeuta[i].getTelefone());
+                System.out.println("Cpf: " + armazenamentoFisioterapeuta[i].getCpf());
+                System.out.println("Especialidade: " + armazenamentoFisioterapeuta[i].getEspecialidade());
+                break;
+            }
+        }
+
     }
 
     private void novoCliente() {
