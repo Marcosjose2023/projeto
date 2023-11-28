@@ -1,10 +1,33 @@
 package com.marcos.projeto;
 
-public class Consulta extends Fisioterapeuta{
-	 private int id_consulta;       
-	 private int id_paciente;       
-	 private int id_fisioterapeuta; 
-	 private int id_agendamento ; 
-	 private String data_consulta;
+import java.time.LocalDateTime;
 
+public class Consulta {
+	 private int idConsulta;
+	 private Agendamento agendamento;
+	 private LocalDateTime dataConsulta;
+
+	public int getIdConsulta() {
+		return idConsulta;
+	}
+
+	public void setIdConsulta(int idConsulta) {
+		this.idConsulta = idConsulta;
+	}
+
+	public Agendamento getAgendamento() {
+		return agendamento;
+	}
+
+	public void setAgendamento(Agendamento agendamento) {
+		this.agendamento = agendamento;
+	}
+
+	public LocalDateTime getDataConsulta() {
+		return dataConsulta;
+	}
+
+	public void setDataConsulta(LocalDateTime dataConsulta) {
+		this.dataConsulta = dataConsulta;
+	}
 }
