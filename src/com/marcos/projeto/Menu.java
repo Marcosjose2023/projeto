@@ -16,27 +16,31 @@ public class Menu {
         scanner = new Scanner(System.in);
     }
 
-    //adicionar opcao no switc case
-    // criar arrays do fisioterapeuta
-    // criar o contador do fisiotepeuta
-    // iniciar o arrys do fisioterapeuta
-    // criar o metodo de registrar o fisioterapeuta
-    // criar o metodo de buscar o fisioterapeuta
-
-
+    /**
+     * Criar array para o agendamento
+     * Inicializar array do agendamento
+     * Adicionar opções no switch case
+     * <p>
+     * No cadastro do agendamento, na hora de escolher o cliente e o fisioterapeuta
+     * deve ser pedido o id destes, pego no array de cada um e colocado dentro do agendamento
+     * <p>
+     * Exibir do agendamento, a data com '.format()' do LocalDateTime
+     * nome do paciente e nome do fisioterapeuta
+     */
 
     public void abrirMenu() {
         int instrucao = 0;
 
-        while (instrucao != 6) {
+        while (instrucao != 7) {
             System.out.println("----------------------------------------------------------------");
             System.out.println("Selecione uma opção:");
             System.out.println("1 - Cadastrar cliente");
             System.out.println("2 - Buscar cliente pelo nome");
-            System.out.println("3 - Buscar cliente pelo id");
-            System.out.println("4 - Cadastrar fisioterapeuta");
-            System.out.println("5 - Buscar fisioterapeuta pelo nome");
-            System.out.println("6 - Sair");
+            System.out.println("3 - Cadastrar fisioterapeuta");
+            System.out.println("4 - Buscar fisioterapeuta pelo nome");
+            System.out.println("5 - Criar agendamento");
+            System.out.println("6 - Consultar agendamento por Id");
+            System.out.println("7 - Sair");
             System.out.println("----------------------------------------------------------------");
 
             instrucao = scanner.nextInt();
@@ -49,13 +53,13 @@ public class Menu {
                 case 2:
                     buscaClientePorNome();
                     break;
-                case 4:
+                case 3:
                     cadastrarFisioterapeuta();
                     break;
-                case 5:
+                case 4:
                     buscarFisioterapeutaPeloNome();
                     break;
-                case 6:
+                case 7:
                     System.out.println("SAINDO.");
                     break;
                 default:

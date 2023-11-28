@@ -6,7 +6,7 @@ public class Agendamento {
     private int idAgendamento;
     private Cliente paciente;
     private Fisioterapeuta fisioterapeuta;
-    private LocalDateTime data;
+    private String data;
     private LocalDateTime dataCriado;
 
     public int getIdAgendamento() {
@@ -33,11 +33,11 @@ public class Agendamento {
         this.fisioterapeuta = fisioterapeuta;
     }
 
-    public LocalDateTime getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(String data) {
         this.data = data;
     }
 
